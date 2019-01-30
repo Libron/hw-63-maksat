@@ -1,7 +1,6 @@
 import React, {Component} from 'react';
 import './App.css';
 import {Route, Switch, BrowserRouter} from 'react-router-dom';
-import axios from 'axios';
 import Biography from "./components/Biography/Biography";
 import Contact from "./components/Contact/Contact";
 import {NavLink} from 'react-router-dom';
