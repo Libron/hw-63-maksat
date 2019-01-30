@@ -2,7 +2,7 @@ import React, {Component} from 'react';
 import {EditorState} from 'draft-js';
 import {Editor} from 'react-draft-wysiwyg';
 import 'react-draft-wysiwyg/dist/react-draft-wysiwyg.css';
-import axios from "axios";
+import axios from "../../axios_url";
 
 class Add extends Component {
     state = {
@@ -32,12 +32,14 @@ class Add extends Component {
 
     sendToApi = (event) => {
         event.preventDefault();
+        this.setState({loading: true});
         const article = {
             title: this.state.title,
             description: this.state.description,
         };
 
-        axios.post('article.json', article).then(()=>{
+        axios.post('articles.json', article).then(()=>{
+            this.setState({loading: false});
             this.props.history.push('/');
         });
       console.log(this.state);
