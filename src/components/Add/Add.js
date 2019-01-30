@@ -35,7 +35,7 @@ class Add extends Component {
         this.setState({loading: true});
         const article = {
             title: this.state.title,
-            description: this.state.description,
+            description: this.state.description.join(' '),
         };
 
         axios.post('articles.json', article).then(()=>{
