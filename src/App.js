@@ -5,6 +5,8 @@ import Biography from "./components/Biography/Biography";
 import Contact from "./components/Contact/Contact";
 import {NavLink} from 'react-router-dom';
 import Add from "./components/Add/Add";
+import Home from "./components/Home/Home";
+import ReadMore from "./components/ReadMore/ReadMore";
 
 
 class App extends Component {
@@ -20,7 +22,7 @@ class App extends Component {
                                 <li className="nav__item">|</li>
                                 <li className="nav__item"><NavLink to='/add' className="nav__link">Add</NavLink></li>
                                 <li className="nav__item">|</li>
-                                <li className="nav__item"><NavLink to='/' className="nav__link">About us</NavLink></li>
+                                <li className="nav__item"><NavLink to='/biography' className="nav__link">About us</NavLink></li>
                                 <li className="nav__item">|</li>
                                 <li className="nav__item"><NavLink to='/contact' className="nav__link">Contact
                                     Us</NavLink>
@@ -30,9 +32,11 @@ class App extends Component {
                     </header>
 
                     <Switch>
-                        <Route path="/" exact component={Biography}/>
+                        <Route path="/" exact component={Home}/>
                         <Route path="/contact" component={Contact}/>
                         <Route path="/add" component={Add}/>
+                        <Route path="/biography" component={Biography}/>
+                        <Route path="/posts/:id" component={ReadMore}/>
                     </Switch>
                 </div>
             </BrowserRouter>
