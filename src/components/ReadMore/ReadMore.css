@@ -1,0 +1,26 @@
+.read__more__p {
+    margin: 10px;
+}
+
+.description {
+    display: grid;
+    place-self: center;
+    width: fit-content;
+    border: 1px solid blue;
+    padding: 20px;
+}
+
+.edit__btn {
+    display: grid;
+    justify-self: end;
+}
+
+.delete__btn {
+    display: grid;
+    justify-self: start;
+}
+
+.buttons__div {
+    display: grid;
+    grid-template-columns: auto auto;
+}

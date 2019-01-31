@@ -5,7 +5,6 @@ import {NavLink} from "react-router-dom";
 class Home extends Component {
 
     state = {
-
         responseArray: [],
     };
 
@@ -16,10 +15,9 @@ class Home extends Component {
                 const key2 = response.data[key];
                 console.log(response.data[key].description);
                 keys.push({id:key, key2});
-
         }
-            console.log(keys);
-        this.setState({responseArray: Object.values(response.data)})
+            console.log(response.data);
+        this.setState({responseArray: keys})
         });
 }
 
@@ -29,16 +27,14 @@ class Home extends Component {
         console.log(this.state);
     }
 
-    readMore=()=>{
-
-    };
 
     render() {
         return (
             <div className='home__container'>
-                {this.state.responseArray.map((item, index)=><div key={index}><p>{item.title}</p>
-                    <NavLink to='/posts/:id' className="read__more__btn">Contact
-                        Us</NavLink>
+                {this.state.responseArray.map((item, index)=>
+                    <div key={index}><p>Title:</p>
+                        <p>{item.key2.title}</p>
+                    <NavLink to={'/posts/' + item.id + "&" + item.key2.title + "&" + item.key2.time + "&" + item.key2.description} className="read__more__btn" id={item.id}>Read More</NavLink>
                 </div> )}
             </div>
         );

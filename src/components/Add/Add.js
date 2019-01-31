@@ -9,6 +9,11 @@ class Add extends Component {
         editorState: EditorState.createEmpty(),
         title: '',
         description: [],
+
+    };
+    localTime = () => {
+        let data = new Date();
+        return data.toLocaleTimeString()
     };
 
     onEditorStateChange = (editorState) => {
@@ -34,6 +39,7 @@ class Add extends Component {
         event.preventDefault();
         this.setState({loading: true});
         const article = {
+            time: this.localTime(),
             title: this.state.title,
             description: this.state.description.join(' '),
         };

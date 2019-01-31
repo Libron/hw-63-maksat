@@ -36,7 +36,8 @@ class App extends Component {
                         <Route path="/contact" component={Contact}/>
                         <Route path="/add" component={Add}/>
                         <Route path="/biography" component={Biography}/>
-                        <Route path="/posts/:id" component={ReadMore}/>
+                        <Route path="/posts/:id&:title&:time&:description" component={ReadMore}/>
+
                     </Switch>
                 </div>
             </BrowserRouter>
