@@ -9,7 +9,7 @@ const ReadMore = (props) => {
         // axios.delete("url", { params: { id: itemId } }).then(response => {
         //     console.log(response);
         // });
-        axios.delete('articles.json', { params: { id: props.match.params.id } }).then((response)=>{
+        axios.delete('articles/' + props.match.params.id + '.json').then((response)=>{
             console.log(response);
             props.history.push('/');
         });
